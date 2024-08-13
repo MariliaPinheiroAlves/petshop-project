@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros de cachorros</title>
+</head>
+<body>
+    <h1>Cadastro de cachorros</h1>
+
+
+
+    <form>
+        <fieldset>
+            <legend><h2>Tutor</h2></legend>
+            <label for="tutor">
+                <span>Nome do tutor</span>
+                <input type="text" id="tutor" name="tutor">
+            </label>
+            <label for="telefoneTutor">
+                <span>Telefone do tutor</span>
+                <input type="text" id="telefoneTutor" name="telefoneTutor">
+            </label>
+        </fieldset>
+        <section class="dog" style="display: flex;">
+            
+            <fieldset>
+                <legend><h2>Dog</h2></legend>
+                <label for="nameDog">
+                    <span>Nome do Cachorro</span>
+                    <input type="text" id="nameDog" name="nameDog">
+                </label>
+                <select id="select" onchange="atualizarImagems()">
+                    <option value="">Selecione a Raça</option>
+                    
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><h2>Foto</h2></legend>
+                 <div id="img"></div>   
+            </fieldset>
+        </section>
+
+        
+
+    </form>
+    
+
+    <script src="../script/script.js"></script>
+</body>
+</html>

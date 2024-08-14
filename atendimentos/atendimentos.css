@@ -1,0 +1,9 @@
+#atendimentos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.atendimento {
+  border: 1px solid black;
+}

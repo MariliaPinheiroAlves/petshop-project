@@ -1,43 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastros de cachorros</title>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Cadastro de cachorros</h1>
 
+
+
     <form>
-      <fieldset>
-        <legend><h2>Tutor</h2></legend>
-        <label for="tutor">
-          <span>Nome do tutor</span>
-          <input type="text" id="tutor" name="tutor" />
-        </label>
-        <label for="telefoneTutor">
-          <span>Telefone do tutor</span>
-          <input type="text" id="telefoneTutor" name="telefoneTutor" />
-        </label>
-      </fieldset>
-      <section class="dog" style="display: flex">
+
+        
+
+
+
+        <section class="dog" style="display: flex;">
+            
+            <fieldset>
+                <legend><h2>Dog</h2></legend>
+                <label for="nomeDog">
+                    <span>Nome do Cachorro</span>
+                    <input type="text" id="nomeDog" name="nomeDog">
+                </label>
+                <select id="select" onchange="atualizarImagems()">
+                    <option value="">Selecione a Raça</option>
+                </select>
+                <label for="idadeDog">
+                    <span>Data de Nascimento:</span>
+                    <input type="date" id="idadeDog" name="idadeDog">
+                </label>
+                <label for="apelidoDog">
+                    <span>Apelido:</span>
+                    <input type="text" id="apelidoDog" name="apelidoDog">
+                </label>
+                <label for="porteDog">
+                    <span>Porte:</span>
+                    <select id="porteDog">
+                        <option value="">Selecioneo Porte</option>
+                        <option value="Pequeno">Pequeno</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                </label>
+                <label for="pelagemDog">
+                    <span>Pelagem:</span>
+                    <select id="pelagemDog">
+                        <option value="">Selecione a Pelagem</option>
+                        <option value="Curto">Pelo curto</option>
+                        <option value="Longo">Pelo longo</option>
+                    </select>
+                </label>
+                <label for="observacaoDog">
+                    <span>Observação:</span>
+                    <textarea name="observacao" id="observacao"></textarea>
+                </label>
+
+            </fieldset>
+            <fieldset>
+                <legend><h2>Foto</h2></legend>
+                 <div id="img"></div>   
+            </fieldset>
+        </section>
+
         <fieldset>
-          <legend><h2>Dog</h2></legend>
-          <label for="nameDog">
-            <span>Nome do Cachorro</span>
-            <input type="text" id="nameDog" name="nameDog" />
-          </label>
-          <select id="select" onchange="atualizarImagems()">
-            <option value="">Selecione a Raça</option>
-          </select>
+            <legend><h2>Tutor</h2></legend>
+            <label for="tutor">
+                <span>Nome do tutor</span>
+                <input type="text" id="tutor" name="tutor">
+            </label>
+            <label for="telefoneTutor">
+                <span>Telefone do tutor</span>
+                <input type="text" id="telefoneTutor" name="telefoneTutor">
+            </label>
         </fieldset>
-        <fieldset>
-          <legend><h2>Foto</h2></legend>
-          <div id="img"></div>
-        </fieldset>
-      </section>
+        
     </form>
+    <button onclick="cadastrarDogs()">Cadastrar</button>
 
     <script src="../script/script.js"></script>
-  </body>
+</body>
 </html>

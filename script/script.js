@@ -77,17 +77,19 @@ function listarDogs(){
     const telefone = document.getElementById('telefoneTutor')
     const enderecoTutor = document.getElementById('enderecoTutor')
     modal.innerHTML=''
+    const titlePage = document.getElementById('titlePage')
+
+    titlePage.innerHTML = 'Editar Pet'
     const pets = buscarPets();
-    
-    
+
     pets.forEach(element => {
-        modal.innerHTML += `<div class='selecionarEdicao' data-id='${element.id}' data-bs-dismiss="modal"><span><strong>Pet:</strong> ${element.nome}</span><span><strong>Tutor: </strong>${element.tutor}</span></div>`
+        modal.innerHTML += `<div ><span><strong>Pet:</strong> ${element.nome}</span><span><strong>Tutor: </strong>${element.tutor}</span><span><button class='selecionarEdicao' data-id='${element.id}' data-bs-dismiss="modal">Editar</button></span></div>`
     });
 
     document.querySelectorAll('.selecionarEdicao').forEach((button) => {
         button.addEventListener('click', (e) => {
         const div = e.target.closest('.selecionarEdicao');
-        const id = div.getAttribute('data-id');       
+        const id = div.getAttribute('data-id');
         const dog = buscarPet(id); 
         
         
@@ -105,6 +107,7 @@ function listarDogs(){
         const atualizar = document.getElementById('atualizar')
         atualizar.innerHTML='<button stytype="button" class="btn btn-secondary">Atualizar</button>'
         atualizar.addEventListener('click',()=>{
+            
             if(nomeDog.value == '' || selectRaca.value == '' || idadeDog.value=='' || apelidoDog.value=='' || porteDog.value==''||pelagemDog.value==''|| tutor.value=='' || telefone.value=='' || enderecoTutor.value==''){
                 alert('Preencha todos os campos')
                 return
@@ -125,7 +128,7 @@ function listarDogs(){
             }
             atualizarPet(petAtualizado)
            
-            location.reload()
+            location.reload()                   
             alert('Atualizado com Sucesso')
         })
 

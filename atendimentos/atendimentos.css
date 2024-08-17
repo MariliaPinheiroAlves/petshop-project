@@ -7,3 +7,12 @@
 .atendimento {
   border: 1px solid black;
 }
+
+.petData {
+  margin-top: 1rem;
+  height: 50px;
+}
+
+p {
+  margin: 0;
+}

@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atendimentos</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="atendimentos.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="header col-12 bg-dark bg-opacity-50 d-flex flex-md-row flex-column justify-content-around align-items-center align-content-center py-4 gap-4">
-          <img src="../images/cusco_logo.svg" class="img-fluid" alt="Logo">
-          <i class="fas fa-user fs-3 p-2 border-black rounded-circle bg-black bg-opacity-25 order-2 order-md-3"></i>
-          <h1 class="text-uppercase col-6 text-center order-3 order-md-2 w-auto">Meus atendimentos</h1>
-        </div>
-        <div class="col-12 col-md-2 bg-dark bg-opacity-25">
-          <div class="menu">
-            <button><a href="#">Área do Funcionário</a></button>
-            <button><a href="">Cadastro de novo pet</a></button>
-            <button><a href="">Pets Cadastrados</a></button>
-            <button><a href="">Novo Agendamento</a></button>
-            <button><a href="">Meus atendimentos</a></button>
-          </div>
-          <button><a href="#">Voltar</a></button>
-        </div>
-        <div class="col-12 col-md-10 bg-dark bg-opacity-75">
 
-          <div class="petData container bg-primary bg-opacity-25 d-flex align-items-center justify-content-around border rounded border-black">
-            <div class="d-flex justify-content-between align-items-center w-75">
-              <p><span class="fw-bold">Nome do Pet:</span> Jujuba</p>
-              <p><span class="fw-bold">Raça:</span> Dachshund</p>
-              <p><span class="fw-bold">Porte:</span> Pequeno</p>
-            </div>
-            <button><a href="#">Buscar</a></button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atendimentos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="atendimentos.css" />
+</head>
 
-          <div class="petDataDetail">
-            <p><span class="fw-bold">Nome do Pet:</span> Jujuba</p>
-              <p><span class="fw-bold">Espécie:</span> Canina</p>
-              <p><span class="fw-bold">Raça:</span> Dachshund</p>
-              <p><span class="fw-bold">Sexo:</span> Fêmea</p>
-              <p><span class="fw-bold">Pelagem:</span> Pelo curto</p>
-              <p><span class="fw-bold">Porte:</span> Pequeno</p>
-              <p><span class="fw-bold">Funcionário Responsável:</span> Marília</p>
-              <p><span class="fw-bold">Observações:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, asperiores?</p>
+<body>
 
-          </div>
-          <!-- <div id="atendimentos"></div> -->
-        </div>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary  ">
+      <div class="container-lg d-flex align-items-center justify-content-between">
+        <a class="navbar-brand" href="../home/index.html"><img src="../images/cusco_logo.svg" alt="Logo"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <h2 id="titlePage" class="mobileNone text-uppercase">Meus atendimentos</h2>
+        <ul class="nav-item  border-0 dropdown mobileNone">
+          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user fs-3 p-2 border-black rounded-circle bg-black bg-opacity-25 order-2 order-md-3"></i>
+          </a>
+          <ul class="dropdown-menu me-auto my-2 my-lg-0 navbar-nav-scroll">
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+
+          </ul>
+        </ul>
+
+      </div>
+    </nav>
+    <div class=" d-lg-none ">
+      <div class="d-lg-none collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <script src="/atendimentos/atendimentos.js"></script>
-  </body>
+  </header>
+
+  <main>
+    <div class="" id="menu">
+      <ul>
+        <a href="../cadastrosdog/cadastroPet.html">
+          <li class="selected">Cadastro Pet</li>
+        </a>
+        <a href="../cadastrosdog/listagemPet.html">
+          <li> Pets Cadastrados</li>
+        </a>
+        <a href="#">
+          <li>Novo Agendamento</li>
+        </a>
+        <a href="#">
+          <li>Meus Atendimentos</li>
+        </a>
+      </ul>
+    </div>
+
+    <div class="content" id="atendimentos"></div>
+
+  </main>
+  <script src="/atendimentos/atendimentos.js"></script>
+</body>
+
 </html>

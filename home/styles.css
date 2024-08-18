@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../images/wallpaper_pet_shop.png);
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.wallpaperdog {
+    max-width: 100%;
+    margin-top: 60px;
+    margin-left: 40px;
+    height: 650px;
+}
+
+#conteudo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    button{
+        background-color: #F18039;
+        border-radius: 60px;
+        border: none;
+        margin: 20px;
+        padding: 15px 20px;
+        width: 200px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    p {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 10px;
+    
+    }
+}
+
+.dropdown {
+    .login {
+        background-color: #F18039 !important;
+        border-radius: 60px;
+        border: none;
+        
+        padding: 10px 20px;
+        width: 150px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+}
+
+.titulo {
+    margin-left: 49px;
+    font-size: 70px;
+    strong{
+        color: #F18039;
+    } 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    margin-top: 0px;
+    background-color: #ffffff;
+    box-shadow: 0;
+    position: sticky !important;
+    top: 0;
+    
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-item-home {
+    text-decoration: none; 
+    color: #333; 
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 20px; 
+    border: 2px solid transparent; 
+    padding: 10px 20px;
+    border-radius: 60px; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-item-home:hover {
+    background-color: #f19351;
+}
+
+.nav-item-home:nth-child(1) {
+    border-color: #F18039;
+
+}
+
+.nav-item {
+    text-decoration: none; 
+    color: #333; 
+    font-size: 24px;
+    font-weight: 600; 
+    margin: 0 20px; 
+    border: 2px solid transparent; 
+    padding: 10px 20px;
+    border-radius: 60px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-item:nth-child(1) {
+    border-color: none; 
+}
+
+
+.login-button {
+    text-decoration: none;
+    color: #343334; 
+    font-size: 24px;
+    font-weight: 600; 
+    padding: 10px 20px;
+    
+    background-color: #F18039  ;
+    border-radius: 30px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #f19351; 
+    color: #343334; 
+}
+
+

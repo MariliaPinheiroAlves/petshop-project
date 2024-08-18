@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastros de cachorros</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
@@ -17,8 +17,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       
-        <h2 id="titlePage">Cadastro de cachorros</h2>
-        <ul class="nav-item dropdown">
+        <h2 id="titlePage" class="mobileNone">Cadastro de cachorros</h2>
+        <ul class="nav-item dropdown mobileNone">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Link
           </a>
@@ -29,7 +29,7 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </ul>
-
+         
       
       
       
@@ -37,9 +37,15 @@
   </nav>
 </header>
 <main>
-    <!-- <div class="menu">
-
-    </div> -->
+  <div id="menu">
+    <ul>
+      <li  class="selected"><a href="#">Cadastro Pet</a></li>
+      <li><a href="#" > Pets Cadastrados</a></li>
+      <li><a href="#" >Novo Agendamento</a></li>
+      <li><a href="#" >Meus Atendimentos</a></li>
+    </ul>
+  </div> 
+    
     <div class="content">
         
         <form class="container-lg">
@@ -112,8 +118,8 @@
                 <label for="enderecoTutor">Endereço:</label>
             </div>
         </fieldset>
-        <span id="atualizar" style="width: 100%; display: flex; flex-direction: column;"></span>
-        <button type="button" class="btn btn-success" onclick="cadastrarDogs()">Cadastrar</button>
+        <span id="buttonCadAtt" style="width: 100%; display: flex; flex-direction: column;"></span>
+        
         <button type="button" class="btn btn-primary" onclick="listarDogs()"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Listar Pets
           </button>

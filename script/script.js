@@ -4,7 +4,10 @@ const select = document.getElementById('select');
 const dogs = JSON.parse(localStorage.getItem('pets')) || []     
 
 const modal = document.getElementById("listaPets")
+const atualizar = document.getElementById('buttonCadAtt')
+atualizar.innerHTML=`<button type="button" class="btn btn-success" onclick="cadastrarDogs()">Cadastrar</button>`
 async function LoadDogs() {
+    
     try {
         const response = await fetch('https://dog.ceo/api/breeds/list');
         const data = await response.json();
@@ -104,8 +107,8 @@ function listarDogs(){
         tutor.value = dog.tutor
         telefone.value = dog.telefone
         enderecoTutor.value = dog.enderecoTutor
-        const atualizar = document.getElementById('atualizar')
-        atualizar.innerHTML='<button stytype="button" class="btn btn-secondary">Atualizar</button>'
+        
+        atualizar.innerHTML='<button type="button" class="btn btn-secondary">Atualizar</button>'
         atualizar.addEventListener('click',()=>{
             
             if(nomeDog.value == '' || selectRaca.value == '' || idadeDog.value=='' || apelidoDog.value=='' || porteDog.value==''||pelagemDog.value==''|| tutor.value=='' || telefone.value=='' || enderecoTutor.value==''){

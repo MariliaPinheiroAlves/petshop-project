@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    
 }
 
 body{
@@ -32,25 +33,43 @@ main{
             gap: 1rem;
             width: 100%;
             align-items: center;
+            a{
+                text-decoration: none;
+                width: 100%;
+                text-decoration: none;
+                color: #333;
+                font-weight: 600;
+
+                &:hover{
+                    a{
+                        color: #f9f9f9;
+                    }
+                }
+            }   
             li{
                 width: 100%;
                 text-align: center;
                 padding: 1rem 2rem;
                 border-radius: 2rem;
                 border: 1px solid #F18039;
-                
-                a{
-                    text-decoration: none;
-                    width: 100%;
-                    text-decoration: none;
-                    color: #333;
-                    font-weight: 600;
+                cursor: pointer;
 
+                &:hover{
+                    background-color: #f18039bd;
+                    
                 }
+
+                
+
+                
             }
         }
     }
-
+    .selected{
+        background-color: #F18039;
+        color: #f9f9f9;
+    }
+    
     .content{
         padding: 15px;
         display: flex;
@@ -103,7 +122,8 @@ main{
     }
     fieldset{
         padding: 15px;
-        border: 1px solid #c1c1c1;
+        border: 1px solid #F18039;
+        border-radius: 10px;
     }
 }
 
@@ -133,15 +153,42 @@ main{
     }
 }
 
-.selected{
+
+
+.nav-item{
+    padding: 0.5rem 1rem;
     background-color: #F18039;
+    color: #f9f9f9;
+    font-weight: 400;
     
-    a{
-        color: #f9f9f9 !important;
+    border-bottom: 1px solid #f9f9f9;
+    border-top: 1px solid #f9f9f9;
+    
+}
+.headerLista{
+    cursor: pointer;
+    transition: 0.3s;
+    
+    &:hover{
+        background-color: #F18039;
+        
     }
 }
-
-
+.headerListaImpar{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #f180398a;
+    &:hover{
+        background-color: #F18039;
+        color: #333;
+    }
+}
+.listagemDogs{
+    
+    span{
+        flex: 1;
+    }
+}
 @media (max-width: 400px) {
 
     .dog{
@@ -157,5 +204,8 @@ main{
 
     #menu{
         display: none !important;
+    }
+    .displayMobile{
+        display: block !important;
     }
 }

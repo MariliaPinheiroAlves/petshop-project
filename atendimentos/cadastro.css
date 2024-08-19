@@ -97,6 +97,8 @@ main {
     display: flex;
     gap: 0.5rem;
 
+    justify-content: center;
+
     #titleDog {
       width: 80%;
       display: flex;
@@ -130,32 +132,35 @@ main {
     padding: 15px;
     border: 1px solid #c1c1c1;
   }
-}
 
+  .selected {
+    background-color: #F18039;
 
-.selected {
-  background-color: #F18039;
-
-  a {
-    color: #f9f9f9 !important;
-  }
-}
-
-@media (max-width: 400px) {
-
-  .dog {
-    flex-direction: column-reverse;
-
-    #titleDog {
-      width: 100% !important;
+    a {
+      color: #f9f9f9 !important;
     }
   }
 
-  .mobileNone {
-    display: none;
-  }
+  @media (max-width: 400px) {
 
-  #menu {
-    display: none !important;
+    .dog {
+      flex-direction: column-reverse;
+
+      #titleDog {
+        width: 100% !important;
+      }
+    }
+
+    .mobileNone {
+      display: none;
+    }
+
+    #menu {
+      display: none !important;
+    }
+
+    #botaoAgendar {
+      margin-bottom: 10px;
+    }
   }
 }

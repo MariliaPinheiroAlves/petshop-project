@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #F18039 !important;
+}
+
+main {
+  display: flex;
+
+
+  #menu {
+    min-width: 400px;
+    height: calc(100dvh - 100px);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #F18039;
+    align-items: center;
+    padding: 1rem;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      align-items: center;
+
+      li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        border: 1px solid #F18039;
+
+        a {
+          text-decoration: none;
+          width: 100%;
+          text-decoration: none;
+          color: #333;
+          font-weight: 600;
+
+        }
+      }
+    }
+  }
+
+  span {
+    font-size: large;
+    margin-bottom: 1rem;
+  }
+
+  #botaoAgendar {
+    width: 50%;
+    align-self: center;
+
+    background-color: #F18039;
+    color: white;
+    border: none;
+  }
+
+  #botaoAgendar:hover {
+    background-color: #e95d06;
+  }
+
+  textarea {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 15px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100dvh - 100px);
+    overflow-y: scroll;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+  }
+
+  .dog {
+    display: flex;
+    gap: 0.5rem;
+
+    #titleDog {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+      }
+
+      h2 {
+        color: #333;
+        font-weight: 500;
+      }
+    }
+
+    #img {
+      display: flex;
+
+      img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  fieldset {
+    padding: 15px;
+    border: 1px solid #c1c1c1;
+  }
+}
+
+
+.selected {
+  background-color: #F18039;
+
+  a {
+    color: #f9f9f9 !important;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .dog {
+    flex-direction: column-reverse;
+
+    #titleDog {
+      width: 100% !important;
+    }
+  }
+
+  .mobileNone {
+    display: none;
+  }
+
+  #menu {
+    display: none !important;
+  }
+}

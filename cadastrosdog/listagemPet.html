@@ -11,14 +11,14 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-lg d-flex align-items-center justify-content-between">
-            <a class="navbar-brand" href="#"><img src="images/cusco_logo.svg" alt="Cusco Logo"></a>
+            <a class="navbar-brand" href="#"><img src="../images/cusco_logo.svg" alt="Cusco Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <h2 id="titlePage" class="mobileNone">Listagem de Cachorros</h2>
             <ul class="nav-item border-0 dropdown mobileNone">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/profile.png" alt="Imagem de perfil">
+                    <img src="../images/img-profile.png" alt="Imagem de perfil">
                 </a>
                 <ul class="dropdown-menu me-auto my-2 my-lg-0 navbar-nav-scroll">
                     <li><hr class="dropdown-divider"></li>
@@ -114,17 +114,17 @@ const editarCachorro = idCachorro => {
     window.location.href = `cadastroPet.html?idCachorro=${idCachorro}`;
 };
 
-const criarCardPet = ({ id, name, breed, age }, index) => `
+const criarCardPet = ({ id, nome, raca, idade }, index) => `
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading${index}">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${index}" aria-expanded="false" aria-controls="flush-collapse${index}">
-                ${name} - ${breed}
+                ${nome} - ${raca}
             </button>
         </h2>
         <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="flush-heading${index}" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-                <p><strong>Raça:</strong> ${breed}</p>
-                <p><strong>Idade:</strong> ${age} anos</p>
+                <p><strong>Raça:</strong> ${raca}</p>
+                <p><strong>Idade:</strong> ${idade} anos</p>
                 <button class="btn btn-primary" onclick="editarCachorro('${id}')">Editar</button>
             </div>
         </div>
@@ -133,6 +133,7 @@ const criarCardPet = ({ id, name, breed, age }, index) => `
 
 const exibirListaDePets = () => {
     const pets = buscarPets();
+    console.log(pets)
     const accordion = document.getElementById("accordionFlushExample");
     accordion.innerHTML = pets.length ? pets.map(criarCardPet).join('') : '<p class="text-center">Nenhum pet cadastrado.</p>';
 };

@@ -33,7 +33,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" href="../home/index.html">Logout</a></li>
 
           </ul>
         </ul>
@@ -72,7 +72,7 @@
     </div>
 
     <div class="container-lg">
-      <div class="accordion accordion-flush listaDogs" id="accordionFlushExample">
+      <div class="accordion accordion-flush listaDogs" id="accordionFlushExample" style="padding:2rem 0.3rem">
         <!-- Pets serão listados aqui -->
       </div>
     </div>
@@ -87,60 +87,37 @@
     const chavePet = "pets";
     const chaveAtendimento = "atendimentos";
 
-    // Utilitários
-    const gerarIdUnico = () => `_${Math.random().toString(36).substr(2, 9)}`;
-
-    // Manipulação de Pets
-    const salvarPet = pet => {
-      pet.id = gerarIdUnico();
-      const pets = buscarPets();
-      pets.push(pet);
-      localStorage.setItem(chavePet, JSON.stringify(pets));
-    };
-
-    const atualizarPet = petAtualizado => {
-      const pets = buscarPets().map(pet => pet.id === petAtualizado.id ? petAtualizado : pet);
-      localStorage.setItem(chavePet, JSON.stringify(pets));
-    };
-
     const buscarPets = () => JSON.parse(localStorage.getItem(chavePet)) || [];
-
-    const buscarPet = id => buscarPets().find(pet => pet.id === id);
-
-    // Manipulação de Atendimentos
-    const salvarAtendimento = atendimento => {
-      atendimento.id = gerarIdUnico();
-      const atendimentos = buscarAtendimentos();
-      atendimentos.push(atendimento);
-      localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
-    };
-
-    const buscarAtendimentos = () => JSON.parse(localStorage.getItem(chaveAtendimento)) || [];
-
-    const atualizarAtendimento = atendimentoAtualizado => {
-      const atendimentos = buscarAtendimentos().map(atendimento => atendimento.id === atendimentoAtualizado.id ? atendimentoAtualizado : atendimento);
-      localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
-    };
-
-    const buscarAtendimento = id => buscarAtendimentos().find(atendimento => atendimento.id === id);
 
     // Funções de Interação com a Interface
     const editarCachorro = idCachorro => {
       window.location.href = `cadastroPet.html?idCachorro=${idCachorro}`;
     };
 
-    const criarCardPet = ({ id, nome, raca, idade }, index) => `
+    const criarCardPet = ({ id, nome, raca, idade, tutor, porte, telefone, enderecoTutor, observacao, imagem}, index) => `
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading${index}">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${index}" aria-expanded="false" aria-controls="flush-collapse${index}">
-                ${nome} - ${raca}
+                <span class='itemPet'><span>Pet:${nome}</span> <span>${raca}</span><span>${tutor}</span></span>
             </button>
         </h2>
+
         <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="flush-heading${index}" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-                <p><strong>Raça:</strong> ${raca}</p>
-                <p><strong>Idade:</strong> ${idade} anos</p>
+                <section class='bodyItem'>
+                <span>
+                <p><strong>Nome do Pet:</strong> ${nome}</p>
+                <p><strong>Porte:</strong> ${porte} </p>
+                <p><strong>Nome do Tutor:</strong> ${porte} </p>
+                <p><strong>Telefone Tutor:</strong> ${telefone} </p>
+                <p><strong>Endereço Tutor:</strong> ${enderecoTutor} </p>
+                <p><strong>Observação:</strong> ${observacao} </p>
                 <button class="btn btn-primary" onclick="editarCachorro('${id}')">Editar</button>
+                </span>
+                <span><img src='${imagem}'/></span>
+                </section>
+                
+                
             </div>
         </div>
     </div>

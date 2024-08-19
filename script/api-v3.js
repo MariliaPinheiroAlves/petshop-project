@@ -45,44 +45,6 @@ function salvarAtendimento(atendimento) {
     localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
 }
 
-// Função para coletar dados do formulário e salvar o atendimento
-function agendarAtendimento() {
-    const selectPet = document.getElementById("selectPet").value;
-    const pelagem = document.getElementById("pelagem").value;
-    const porte = document.getElementById("porte").value;
-    const observacoes = document.getElementById("observacoes").value;
-    const selectFuncionario = document.getElementById("selectFuncionario").value;
-    const data = document.getElementById("data").value;
-    const horario = document.getElementById("horario").value;
-    const valorTotal = document.getElementById("valorTotal").value;
-    
-    // Coleta dos serviços selecionados
-    const servicos = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-                           .map(checkbox => checkbox.value);
-
-    if (!selectPet || !selectFuncionario || !data || !horario) {
-        alert('Preencha todos os campos obrigatórios');
-        return;
-    }
-
-    const novoAtendimento = {
-        petId: selectPet,
-        pelagem,
-        porte,
-        observacoes,
-        funcionario: selectFuncionario,
-        data,
-        horario,
-        servicos,
-        valorTotal
-    };
-
-    salvarAtendimento(novoAtendimento);
-    alert('Atendimento agendado com sucesso!');
-    location.reload()
-}
-
-
 // Função para carregar e exibir a lista de atendimentos
 function buscarAtendimentos() {
     const atendimentos = JSON.parse(localStorage.getItem(chaveAtendimento)) || [];
@@ -105,6 +67,63 @@ function buscarAtendimento(id) {
     return atendimento
 }
 
+//Editar Cachorro para a pagina
+//mudar o caminho de acordo com a pagina de cadastro de cachorro
+function editarCachorro(cachorro) {
+    // Monta a URL com o parâmetro idCachorro
+    const url = `../cachorro/cadastro.html?idCachorro=${cachorro.id}`;
+    // Redireciona para a URL construída
+    window.location.href = url;
+}
+
+   // Função para obter os parâmetros da query string
+function obterValorParametroURL(nomeDoParametro) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nomeDoParametro);
+}
+/*
+ exemplo de uso
+ const idCachorro = obterValorParametroURL('idCachorro');
+*/
+// Obtém o valor do parâmetro "nome"
+
+// Função para coletar dados do formulário e salvar o atendimento
+function agendarAtendimento() {
+    const selectPet = document.getElementById("selectPet").value;
+    const pelagem = document.getElementById("pelagem").value;
+    const porte = document.getElementById("porte").value;
+    const observacoes = document.getElementById("observacoes").value;
+    const selectFuncionario = document.getElementById("selectFuncionario").value;
+    const data = document.getElementById("data").value;
+    const horario = document.getElementById("horario").value;
+    const valorTotal = document.getElementById("valorTotal").value;
+    const imgPet = document.querySelector('#img img')
+    // Coleta dos serviços selecionados
+    const servicos = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                           .map(checkbox => checkbox.value);
+
+    if (!selectPet || !selectFuncionario || !data || !horario) {
+        alert('Preencha todos os campos obrigatórios');
+        return;
+    }
+
+    const novoAtendimento = {
+        petId: selectPet,
+        pelagem,
+        porte,
+        observacoes,
+        funcionario: selectFuncionario,
+        data,
+        horario,
+        servicos,
+        valorTotal,
+        imgPet: imgPet.src
+    };
+
+    salvarAtendimento(novoAtendimento);
+    alert('Atendimento agendado com sucesso!');
+    location.reload()
+}
 
 //Função para preencher as opções do <select> com os pets armazenados no localStorage:
 function preencherSelectPets() {

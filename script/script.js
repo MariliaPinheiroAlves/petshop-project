@@ -31,6 +31,7 @@ async function atualizarImagems() {
 }
 
 function cadastrarDogs(){
+
     const nomeDog = document.getElementById("nomeDog")
     const selectRaca = document.getElementById("select")
     const idadeDog = document.getElementById("idadeDog")
@@ -67,6 +68,7 @@ function cadastrarDogs(){
 
 
 function listarDogs(){
+    modal.innerHTML=''
     document.getElementById('img').innerHTML = `<img src='' id='imgDog'>`;
     const nomeDog = document.getElementById("nomeDog")
     const selectRaca = document.getElementById("select")
@@ -79,7 +81,7 @@ function listarDogs(){
     const tutor = document.getElementById('tutor')
     const telefone = document.getElementById('telefoneTutor')
     const enderecoTutor = document.getElementById('enderecoTutor')
-    modal.innerHTML=''
+    
     const titlePage = document.getElementById('titlePage')
 
     titlePage.innerHTML = 'Editar Pet'
@@ -90,12 +92,42 @@ function listarDogs(){
     });
 
     document.querySelectorAll('.selecionarEdicao').forEach((button) => {
+        
         button.addEventListener('click', (e) => {
-        const div = e.target.closest('.selecionarEdicao');
-        const id = div.getAttribute('data-id');
-        const dog = buscarPet(id); 
+            const div = e.target.closest('.selecionarEdicao');
+            const id = div.getAttribute('data-id');
+            editarCachorro(id)
         
+
+        });
+    });
+    
         
+}
+
+const idCachorro = obterValorParametroURL('idCachorro');
+if(idCachorro){
+    editarCachorro(idCachorro)
+}
+function editarCachorro(id){
+    const dog = buscarPet(id); 
+    document.getElementById('img').innerHTML = `<img src='' id='imgDog'>`;
+    const nomeDog = document.getElementById("nomeDog")
+    const selectRaca = document.getElementById("select")
+    const idadeDog = document.getElementById("idadeDog")
+    const apelidoDog = document.getElementById("apelidoDog")
+    const porteDog = document.getElementById("porteDog")
+    const pelagemDog = document.getElementById("pelagemDog")
+    const observacaoDog = document.getElementById("observacao")
+    const imgDOG = document.getElementById('imgDog')
+    const tutor = document.getElementById('tutor')
+    const telefone = document.getElementById('telefoneTutor')
+    const enderecoTutor = document.getElementById('enderecoTutor')
+    
+    const titlePage = document.getElementById('titlePage')
+
+    titlePage.innerHTML = 'Editar Pet'
+
         nomeDog.value = dog.nome
         selectRaca.value = dog.raca
         idadeDog.value =dog.idade
@@ -108,9 +140,11 @@ function listarDogs(){
         telefone.value = dog.telefone
         enderecoTutor.value = dog.enderecoTutor
         
-        atualizar.innerHTML='<button type="button" class="btn btn-secondary">Atualizar</button>'
-        atualizar.addEventListener('click',()=>{
-            
+        atualizar.innerHTML=`<button type="button" class="btn btn-secondary">Atualizar</button>`
+
+        
+
+        atualizar.addEventListener('click', ()=>{
             if(nomeDog.value == '' || selectRaca.value == '' || idadeDog.value=='' || apelidoDog.value=='' || porteDog.value==''||pelagemDog.value==''|| tutor.value=='' || telefone.value=='' || enderecoTutor.value==''){
                 alert('Preencha todos os campos')
                 return
@@ -130,15 +164,12 @@ function listarDogs(){
                 enderecoTutor: enderecoTutor.value
             }
             atualizarPet(petAtualizado)
-           
-            location.reload()                   
+            window.history.replaceState(null, '', window.location.pathname);
+            window.location.reload();                     
             alert('Atualizado com Sucesso')
         })
-
-        });
-    });
     
-        
+    
 }
 
 LoadDogs()

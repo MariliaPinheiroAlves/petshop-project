@@ -1,24 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    
+
 }
 
-body{
+body {
     overflow: hidden;
 }
 
-.navbar{
+.navbar {
     background-color: #F18039 !important;
 }
-main{
+
+main {
     display: flex;
 
 
 
-    #menu{
+    #menu {
         min-width: 400px;
         height: calc(100dvh - 100px);
         display: flex;
@@ -26,27 +27,30 @@ main{
         border-right: 1px solid #F18039;
         align-items: center;
         padding: 1rem;
-        ul{ 
+
+        ul {
             list-style-type: none;
             display: flex;
             flex-direction: column;
             gap: 1rem;
             width: 100%;
             align-items: center;
-            a{
+
+            a {
                 text-decoration: none;
                 width: 100%;
                 text-decoration: none;
                 color: #333;
                 font-weight: 600;
 
-                &:hover{
-                    a{
+                &:hover {
+                    a {
                         color: #f9f9f9;
                     }
                 }
-            }   
-            li{
+            }
+
+            li {
                 width: 100%;
                 text-align: center;
                 padding: 1rem 2rem;
@@ -54,23 +58,24 @@ main{
                 border: 1px solid #F18039;
                 cursor: pointer;
 
-                &:hover{
+                &:hover {
                     background-color: #f18039bd;
-                    
+
                 }
 
-                
 
-                
+
+
             }
         }
     }
-    .selected{
+
+    .selected {
         background-color: #F18039;
         color: #f9f9f9;
     }
-    
-    .content{
+
+    .content {
         padding: 15px;
         display: flex;
         flex-direction: column;
@@ -78,41 +83,45 @@ main{
         width: 100%;
         height: calc(100dvh - 100px);
         overflow-y: scroll;
-        
-        form{
+
+        form {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             width: 100%;
-            
-            
+
+
         }
 
-        
+
     }
 
-    .dog{
+    .dog {
         display: flex;
         gap: 0.5rem;
-        
-        #titleDog{
+
+        #titleDog {
             width: 80%;
             display: flex;
             flex-direction: column;
             gap: 5px;
-            label{
+
+            label {
                 display: flex;
                 flex-direction: column;
             }
-            h2{
+
+            h2 {
                 color: #333;
                 font-weight: 500;
             }
-            
+
         }
-        #img{
+
+        #img {
             display: flex;
-            img{
+
+            img {
                 height: 400px;
                 width: 100%;
                 object-fit: cover;
@@ -120,24 +129,25 @@ main{
             }
         }
     }
-    fieldset{
+
+    fieldset {
         padding: 15px;
         border: 1px solid #F18039;
         border-radius: 10px;
     }
 }
 
-#listaPets{
+#listaPets {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
-    div{
+    div {
         display: flex;
         justify-content: space-between;
 
 
-        span{
+        span {
             width: 50%;
             border: 1px solid #c1c1c1;
             padding: 0.5rem 1rem;
@@ -145,67 +155,89 @@ main{
     }
 }
 
-.selecionarEdicao{
+.selecionarEdicao {
     cursor: pointer;
     transition: 0.3s;
-    &:hover{
+
+    &:hover {
         background-color: #c1c1c1;
     }
 }
 
 
 
-.nav-item{
+.nav-item {
     padding: 0.5rem 1rem;
     background-color: #F18039;
     color: #f9f9f9;
     font-weight: 400;
-    
+
     border-bottom: 1px solid #f9f9f9;
     border-top: 1px solid #f9f9f9;
-    
+
 }
-.headerLista{
+
+.headerLista {
     cursor: pointer;
     transition: 0.3s;
-    
-    &:hover{
+
+    &:hover {
         background-color: #F18039;
-        
+
     }
 }
-.headerListaImpar{
+
+.headerListaImpar {
     cursor: pointer;
     transition: 0.3s;
     background-color: #f180398a;
-    &:hover{
+
+    &:hover {
         background-color: #F18039;
         color: #333;
     }
 }
-.listagemDogs{
-    
-    span{
+
+.listagemDogs {
+
+    span {
         flex: 1;
     }
 }
+
 @media (max-width: 400px) {
 
-    .dog{
+    .dog {
         flex-direction: column-reverse;
 
-        #titleDog{
+        #titleDog {
             width: 100% !important;
         }
     }
-    .mobileNone{
+
+    .mobileNone {
         display: none;
     }
 
-    #menu{
+    #menu {
         display: none !important;
     }
-    .displayMobile{
+
+    .displayMobile {
         display: block !important;
     }
+}
+
+.itemPet {
+
+    display: flex;
+    width: 100%;
+    span{
+        flex:1;
+    }
+}
+
+.bodyItem{
+    display: flex;
+    justify-content: space-between;
 }

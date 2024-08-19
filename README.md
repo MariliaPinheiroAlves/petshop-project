@@ -1,6 +1,6 @@
 # Santander Coders - Ada Tech
 
-Este projeto foi desenvolvido para o módulo de front-end estático da Ada Tech ministrado pelo professor Guilherme Sousa. Trabalhamos na criação do layout de um pet shop utilizando HTML e CSS. Também implementamos a administração de dados no Local Storage para povoar a página com as informações necessárias.
+Este projeto foi desenvolvido para o módulo de front-end estático da Ada Tech ministrado pelo professor Guilherme Soares. Trabalhamos na criação do layout de um pet shop utilizando HTML e CSS. Também implementamos a administração de dados no Local Storage para povoar a página com as informações necessárias.
 
 ## 🛠️ Linguagens e Ferramentas
 

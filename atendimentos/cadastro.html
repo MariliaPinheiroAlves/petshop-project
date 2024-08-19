@@ -49,35 +49,43 @@
     </div>
 
     <div class="content">
-
       <form class="container-lg">
         <section class="dog">
           <fieldset id="titleDog">
-
             <legend>
               <h4>Dados do pet</h4>
             </legend>
 
-            <select id="selectPet" class="form-select form-select-lg mb-3">
-              <option value="">Selecione o pet</option>
-            </select>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <select id="selectPet" class="form-select form-select-lg mb-3 fs-6">
+                  <option value="">Selecione o pet</option>
+                </select>
 
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="pelagem" placeholder="Pelagem">
-              <label for="floatingInput">Pelagem</label>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="pelagem" placeholder="Pelagem">
+                  <label for="floatingInput">Pelagem</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="porte" placeholder="Porte">
+                  <label for="floatingInput">Porte</label>
+                </div>
+
+                <select id="sexo" class="form-select form-select-lg mb-3 fs-6">
+                  <option selected disabled="">Selecione o sexo</option>
+                  <option value="macho">Macho</option>
+                  <option value="femea">Fêmea</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 text-center">
+                <fieldset id="img">
+                </fieldset>
+              </div>
             </div>
 
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="sexo" placeholder="Sexo">
-              <label for="floatingInput">Sexo</label>
-            </div>
-
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="porte" placeholder="Porte">
-              <label for="floatingInput">Porte</label>
-            </div>
-
-            <select id="selectFuncionario" class="form-select form-select-lg mb-3">
+            <select id="selectFuncionario" class="form-select form-select-lg mb-3 fs-6">
               <option selected disabled="">Selecione o funcionário</option>
               <option value="Leandro">Leandro Ribeiro</option>
               <option value="Lucas">Lucas Kennde</option>
@@ -88,12 +96,12 @@
 
             <label for="data">
               <span>Data:</span>
-              <input type="date" class='form-select form-select-lg mb-3' id="data" name="data">
+              <input type="date" class='form-select form-select-lg mb-3 fs-6' id="data" name="data">
             </label>
 
             <label for="horario">
               <span>Horário:</span>
-              <input type="time" class='form-select form-select-lg mb-3' id="horario" name="horario">
+              <input type="time" class='form-select form-select-lg mb-3 fs-6' id="horario" name="horario">
             </label>
 
             <label for="tipoServico">
@@ -115,23 +123,24 @@
                   <input class="form-check-input" type="checkbox" id="tosaHigienica" value="tosaHigienica">
                   <label class="form-check-label" for="tosaHigienica">Tosa Higiênica</label>
                 </div>
-
               </div>
+            </label>
+
+            <label for="valorTotal">
+              <span>Valor Total:</span>
+              <input type="text" id="valorTotal" class="form-control" readonly>
             </label>
 
             <label for="observacoes">
               <span>Observações:</span>
               <textarea name="observacoes" id="observacoes"></textarea>
             </label>
-
           </fieldset>
         </section>
 
         <button type="button" id="botaoAgendar" onclick="agendarAtendimento()"
           class="btn btn-outline-primary">Agendar</button>
       </form>
-
-
     </div>
   </main>
 
@@ -143,9 +152,34 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      preencherSelectPets();
+      const valoresServicos = {
+        banho: 80,
+        tosa: 80,
+        corteUnha: 60,
+        tosaHigienica: 100
+      };
+
+      const checkboxes = document.querySelectorAll('#tipoServico .form-check-input');
+      const valorTotalInput = document.getElementById('valorTotal');
+
+      function atualizarValorTotal() {
+        let total = 0;
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            total += valoresServicos[checkbox.id];
+          }
+        });
+        valorTotalInput.value = `R$ ${total.toFixed(2)}`;
+      }
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', atualizarValorTotal);
+      });
+
+      atualizarValorTotal();
     });
   </script>
+
 </body>
 
 </html>

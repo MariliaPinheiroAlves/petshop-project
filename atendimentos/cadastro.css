@@ -6,7 +6,7 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .navbar {
@@ -15,7 +15,6 @@ body {
 
 main {
   display: flex;
-
 
   #menu {
     min-width: 400px;
@@ -47,7 +46,6 @@ main {
           text-decoration: none;
           color: #333;
           font-weight: 600;
-
         }
       }
     }
@@ -61,7 +59,6 @@ main {
   #botaoAgendar {
     width: 50%;
     align-self: center;
-
     background-color: #F18039;
     color: white;
     border: none;
@@ -78,7 +75,6 @@ main {
   .content {
     padding: 15px;
     display: flex;
-
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -96,7 +92,6 @@ main {
   .dog {
     display: flex;
     gap: 0.5rem;
-
     justify-content: center;
 
     #titleDog {
@@ -141,26 +136,37 @@ main {
     }
   }
 
+  #img img {
+    max-width: 100%;
+    height: auto;
+  }
+
   @media (max-width: 400px) {
-
-    .dog {
-      flex-direction: column-reverse;
-
-      #titleDog {
-        width: 100% !important;
-      }
-    }
-
-    .mobileNone {
-      display: none;
-    }
-
     #menu {
       display: none !important;
     }
 
+    .content {
+      height: auto;
+    }
+
+    .dog {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    #titleDog {
+      width: 100%;
+    }
+
+    #img img {
+      max-width: 100%;
+      height: auto;
+    }
+
     #botaoAgendar {
       margin-bottom: 10px;
+      width: 100%;
     }
   }
 }

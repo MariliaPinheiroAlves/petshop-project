@@ -1,120 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Cachorros</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Cachorros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-lg d-flex align-items-center justify-content-between">
-            <a class="navbar-brand" href="#"><img src="../images/cusco_logo.svg" alt="Cusco Logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <h2 id="titlePage" class="mobileNone">Listagem de Cachorros</h2>
-            <ul class="nav-item border-0 dropdown mobileNone">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../images/img-profile.png" alt="Imagem de perfil">
-                </a>
-                <ul class="dropdown-menu me-auto my-2 my-lg-0 navbar-nav-scroll">
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
-                </ul>
-            </ul>
-        </div>
-    </nav>
-    <div class="d-lg-none">
-        <div class="d-lg-none collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</header>
-<main>
-    <div id="menu" class="mb-4">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="cadastroPet.html">Cadastro Pet</a>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary  ">
+      <div class="container-lg d-flex align-items-center justify-content-between">
+        <a class="navbar-brand" href="../home/index.html"><img src="../images/cusco_logo.svg" alt srcset></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <h2 id="titlePage" class="mobileNone text-uppercase">Listagem de cachorros</h2>
+        <ul class="nav-item  border-0 dropdown mobileNone">
+          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user fs-3 p-2 border-black rounded-circle bg-black bg-opacity-25 order-2 order-md-3"></i>
+          </a>
+          <ul class="dropdown-menu me-auto my-2 my-lg-0 navbar-nav-scroll">
+            <li>
+              <hr class="dropdown-divider">
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pets Cadastrados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Novo Agendamento</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Meus Atendimentos</a>
-            </li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+
+          </ul>
         </ul>
+
+      </div>
+    </nav>
+    <div class=" d-lg-none ">
+      <div class="d-lg-none collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
+  </header>
+  <main>
+    <div id="menu">
+      <ul>
+        <a href="cadastroPet.html">
+          <li>Cadastro Pet</li>
+        </a>
+        <a href="#">
+          <li class="selected"> Pets Cadastrados</li>
+        </a>
+        <a href="../atendimentos/cadastro.html">
+          <li>Novo Agendamento</li>
+        </a>
+        <a href="../atendimentos/atendimentos.html">
+          <li>Meus Atendimentos</li>
+        </a>
+      </ul>
+    </div>
+
     <div class="container-lg">
-        <div class="accordion accordion-flush listaDogs" id="accordionFlushExample">
-            <!-- Pets serão listados aqui -->
-        </div>
+      <div class="accordion accordion-flush listaDogs" id="accordionFlushExample">
+        <!-- Pets serão listados aqui -->
+      </div>
     </div>
-</main> 
+  </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-<script>
-// Configurações de chaves do localStorage
-const chavePet = "pets";
-const chaveAtendimento = "atendimentos";
+  <script>
+    // Configurações de chaves do localStorage
+    const chavePet = "pets";
+    const chaveAtendimento = "atendimentos";
 
-// Utilitários
-const gerarIdUnico = () => `_${Math.random().toString(36).substr(2, 9)}`;
+    // Utilitários
+    const gerarIdUnico = () => `_${Math.random().toString(36).substr(2, 9)}`;
 
-// Manipulação de Pets
-const salvarPet = pet => {
-    pet.id = gerarIdUnico();
-    const pets = buscarPets();
-    pets.push(pet);
-    localStorage.setItem(chavePet, JSON.stringify(pets));
-};
+    // Manipulação de Pets
+    const salvarPet = pet => {
+      pet.id = gerarIdUnico();
+      const pets = buscarPets();
+      pets.push(pet);
+      localStorage.setItem(chavePet, JSON.stringify(pets));
+    };
 
-const atualizarPet = petAtualizado => {
-    const pets = buscarPets().map(pet => pet.id === petAtualizado.id ? petAtualizado : pet);
-    localStorage.setItem(chavePet, JSON.stringify(pets));
-};
+    const atualizarPet = petAtualizado => {
+      const pets = buscarPets().map(pet => pet.id === petAtualizado.id ? petAtualizado : pet);
+      localStorage.setItem(chavePet, JSON.stringify(pets));
+    };
 
-const buscarPets = () => JSON.parse(localStorage.getItem(chavePet)) || [];
+    const buscarPets = () => JSON.parse(localStorage.getItem(chavePet)) || [];
 
-const buscarPet = id => buscarPets().find(pet => pet.id === id);
+    const buscarPet = id => buscarPets().find(pet => pet.id === id);
 
-// Manipulação de Atendimentos
-const salvarAtendimento = atendimento => {
-    atendimento.id = gerarIdUnico();
-    const atendimentos = buscarAtendimentos();
-    atendimentos.push(atendimento);
-    localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
-};
+    // Manipulação de Atendimentos
+    const salvarAtendimento = atendimento => {
+      atendimento.id = gerarIdUnico();
+      const atendimentos = buscarAtendimentos();
+      atendimentos.push(atendimento);
+      localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
+    };
 
-const buscarAtendimentos = () => JSON.parse(localStorage.getItem(chaveAtendimento)) || [];
+    const buscarAtendimentos = () => JSON.parse(localStorage.getItem(chaveAtendimento)) || [];
 
-const atualizarAtendimento = atendimentoAtualizado => {
-    const atendimentos = buscarAtendimentos().map(atendimento => atendimento.id === atendimentoAtualizado.id ? atendimentoAtualizado : atendimento);
-    localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
-};
+    const atualizarAtendimento = atendimentoAtualizado => {
+      const atendimentos = buscarAtendimentos().map(atendimento => atendimento.id === atendimentoAtualizado.id ? atendimentoAtualizado : atendimento);
+      localStorage.setItem(chaveAtendimento, JSON.stringify(atendimentos));
+    };
 
-const buscarAtendimento = id => buscarAtendimentos().find(atendimento => atendimento.id === id);
+    const buscarAtendimento = id => buscarAtendimentos().find(atendimento => atendimento.id === id);
 
-// Funções de Interação com a Interface
-const editarCachorro = idCachorro => {
-    window.location.href = `cadastroPet.html?idCachorro=${idCachorro}`;
-};
+    // Funções de Interação com a Interface
+    const editarCachorro = idCachorro => {
+      window.location.href = `cadastroPet.html?idCachorro=${idCachorro}`;
+    };
 
-const criarCardPet = ({ id, nome, raca, idade }, index) => `
+    const criarCardPet = ({ id, nome, raca, idade }, index) => `
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading${index}">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${index}" aria-expanded="false" aria-controls="flush-collapse${index}">
@@ -131,16 +146,17 @@ const criarCardPet = ({ id, nome, raca, idade }, index) => `
     </div>
 `;
 
-const exibirListaDePets = () => {
-    const pets = buscarPets();
-    console.log(pets)
-    const accordion = document.getElementById("accordionFlushExample");
-    accordion.innerHTML = pets.length ? pets.map(criarCardPet).join('') : '<p class="text-center">Nenhum pet cadastrado.</p>';
-};
+    const exibirListaDePets = () => {
+      const pets = buscarPets();
+      console.log(pets)
+      const accordion = document.getElementById("accordionFlushExample");
+      accordion.innerHTML = pets.length ? pets.map(criarCardPet).join('') : '<p class="text-center">Nenhum pet cadastrado.</p>';
+    };
 
-// Inicializar exibição de pets ao carregar a página
-document.addEventListener("DOMContentLoaded", exibirListaDePets);
-</script>
+    // Inicializar exibição de pets ao carregar a página
+    document.addEventListener("DOMContentLoaded", exibirListaDePets);
+  </script>
 
 </body>
+
 </html>

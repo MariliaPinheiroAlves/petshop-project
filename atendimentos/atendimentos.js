@@ -62,33 +62,30 @@ const exibirAtendimentos = () => {
   for (let i = 0; i < atendimento.length; i++) {
     atendimentos.innerHTML +=
       `
-      <div class="col-12 col-md-10 d-flex flex-column justify-content-center align-items-center mb-4">
-        <p class="w-100">Atendimento ${i+1}</p>
-        <div class="container d-flex align-items-center justify-content-around border rounded border-black p-2 mb-2">
+      <div class="col-12 col-md-10 d-flex flex-column justify-content-center align-items-center mb-4 border border-black rounded p-2">
+        <div class="container d-flex align-items-center justify-content-around border-bottom p-2 mb-2">
           <div class="d-flex justify-content-between align-items-center w-75">
-            <p><span class="fw-bold">Nome do Pet:</span> Jujuba</p>
-            <p><span class="fw-bold">Raça:</span> Dachshund</p>
-            <p><span class="fw-bold">Porte:</span> Pequeno</p>
+            <p><span class="fw-bold">Nome do Pet:</span> ${atendimento[i].nomeDoCachorro}</p>
+            <p><span class="fw-bold">Raça:</span> ${atendimento[i].raca}</p>
+            <p><span class="fw-bold">Porte:</span> ${atendimento[i].porte}</p>
           </div>
           <a href="#" class="btn">Buscar</a>
         </div>
 
-        <div class="container border rounded border-black p-2 row">
+        <div class="container p-2 row">
           <div class="col-9">
-            <div class="d-flex justify-content-evenly my-3">
-              <p><span class="fw-bold">Nome do Pet:</span> Jujuba</p>
-              <p><span class="fw-bold">Espécie:</span> Canina</p>
-              <p><span class="fw-bold">Raça:</span> Dachshund</p>
+            <div class="d-flex justify-content-evenly my-3 flex-wrap gap-2">
+              <p><span class="fw-bold">Nome do Pet:</span> ${atendimento[i].nomeDoCachorro}</p>
+              <p><span class="fw-bold">Raça:</span> ${atendimento[i].raca}</p>
+              <p><span class="fw-bold">Porte:</span> ${atendimento[i].porte}</p>
             </div>
             <div class="d-flex justify-content-evenly mb-3">
-              <p><span class="fw-bold">Sexo:</span> Fêmea</p>
-              <p><span class="fw-bold">Pelagem:</span> Pelo curto</p>
-              <p><span class="fw-bold">Porte:</span> Pequeno</p>
+              <p><span class="fw-bold">Sexo:</span> ${atendimento[i].sexo}</p>
+              <p><span class="fw-bold">Pelagem:</span> ${atendimento[i].pelagem}</p>
             </div>
             <div>
-              <p><span class="fw-bold">Funcionário Responsável:</span> Marília</p>
-              <p><span class="fw-bold">Observações:</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Odio, asperiores?</p>
+              <p><span class="fw-bold">Funcionário Responsável:</span> ${atendimento[i].funcionarioResponsavel}</p>
+              <p><span class="fw-bold">Observações:</span> ${atendimento[i].observacao ? atendimento[i].observacao : "Sem observação"}</p>
             </div>
           </div>
           <div class="col-3">

@@ -33,20 +33,36 @@ main {
       width: 100%;
       align-items: center;
 
+      a {
+        text-decoration: none;
+        width: 100%;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+
+        &:hover {
+          a {
+            color: #f9f9f9;
+          }
+        }
+      }
+
       li {
         width: 100%;
         text-align: center;
         padding: 1rem 2rem;
         border-radius: 2rem;
         border: 1px solid #F18039;
+        cursor: pointer;
 
-        a {
-          text-decoration: none;
-          width: 100%;
-          text-decoration: none;
-          color: #333;
-          font-weight: 600;
+        &:hover {
+          background-color: #f18039bd;
         }
+      }
+
+      .selected {
+        background-color: #F18039;
+        color: #f9f9f9;
       }
     }
   }
@@ -168,5 +184,26 @@ main {
       margin-bottom: 10px;
       width: 100%;
     }
+  }
+}
+
+.headerLista {
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #F18039;
+
+  }
+}
+
+.headerListaImpar {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #f180398a;
+
+  &:hover {
+    background-color: #F18039;
+    color: #333;
   }
 }
